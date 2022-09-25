@@ -27,6 +27,6 @@ export class ClockAngleHourFetch implements IClockAngleHourFetch {
 
     res.send(response);
 
-    return response as responseType;
+    return response;
   }
 }
