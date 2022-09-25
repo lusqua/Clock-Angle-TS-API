@@ -1,6 +1,5 @@
-import { CalcCreateRepository, CalcFindRepository } from "../../repository";
 import { Request, Response } from "express";
-import { ClockCalcsFindService } from "@domain/useCase/ClockCalsFindService";
+import { IClockCalcsFindService } from "@domain/useCase/ClockCalsFindService";
 
 type queryParamsType = {
   hour?: number;
@@ -15,17 +14,16 @@ interface IClockAngleHourFetch {
   handle(req: Request, res: Response): Promise<responseType>;
 }
 
-export class ClockAngleMinutesFetch {
+export class ClockAngleMinutesFetch implements IClockAngleHourFetch {
   constructor(
-    private clockCalcsFindService?: ClockCalcsFindService
+    private service: IClockCalcsFindService
   ) {}
 
-  async handle(req: Request, res: Response):
-  Promise<responseType> {
+  handle = async (req: Request, res: Response):
+  Promise<responseType> => {
     const { hour, minutes } = req.params as queryParamsType;
 
-    const service = this ? this.clockCalcsFindService : new ClockCalcsFindService(new CalcFindRepository(), new CalcCreateRepository());
-    const response = await service.handle(Number(hour), Number(minutes));
+    const response = await this.service.handle(Number(hour), Number(minutes));
 
     res.send(response);
 
