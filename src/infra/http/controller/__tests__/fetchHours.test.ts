@@ -1,8 +1,9 @@
-import { IClockCalcsFindService } from "../../../../domain/useCase/ClockCalsFindService";
 import { Request, Response } from "express";
+
+import { IClockCalcsFindService } from "../../../../domain/useCase/ClockCalsFindService";
 import { ClockAngleHourFetch } from "../fetchHours";
 
-describe('the data is peanut butter', () => {
+describe('Test fetch hour route', () => {
 
   let clockCalcsFind: IClockCalcsFindService;
 
@@ -16,7 +17,7 @@ describe('the data is peanut butter', () => {
     };
   });
 
-  it('the fetch fails with an error', async () => {
+  it('should be 180 degree', async () => {
 
     const fectch = new ClockAngleHourFetch(clockCalcsFind);
 
