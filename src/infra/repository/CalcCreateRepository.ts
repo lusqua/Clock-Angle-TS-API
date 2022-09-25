@@ -1,4 +1,4 @@
-import { ICalcsCreateRepository } from "@/domain/types/ICalcsRepostory";
+import { ICalcsCreateRepository } from "@domain/types/ICalcsRepostory";
 import { AppDataSource } from "../database/dataSource";
 
 export class CalcCreateRepository implements ICalcsCreateRepository {

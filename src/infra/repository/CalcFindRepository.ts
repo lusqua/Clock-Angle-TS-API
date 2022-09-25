@@ -1,5 +1,5 @@
-import { ClockCalcsType } from "@/domain/entity/ClockCalcs";
-import { ICalcsFindRepository } from "@/domain/types/ICalcsRepostory";
+import { ClockCalcsType } from "@domain/entity/ClockCalcs";
+import { ICalcsFindRepository } from "@domain/types/ICalcsRepostory";
 import { AppDataSource } from "../database/dataSource";
 
 export class CalcFindRepository implements ICalcsFindRepository {

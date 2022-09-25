@@ -1,4 +1,4 @@
-import { IClockCalcsFindService } from "@/domain/useCase/ClockCalsFindService";
+import { IClockCalcsFindService } from "../../../../domain/useCase/ClockCalsFindService";
 import { Request, Response } from "express";
 import { ClockAngleHourFetch } from "../fetchHours";
 
@@ -7,6 +7,8 @@ describe('the data is peanut butter', () => {
   let clockCalcsFind: IClockCalcsFindService;
 
   beforeEach(() => {
+    jest.useFakeTimers()
+
     clockCalcsFind = {
       handle: jest.fn().mockReturnValue({
         angle: 180

@@ -8,6 +8,8 @@ describe('ClockCalcsFind', (): void => {
   let clockCalcsCreate: ICalcsCreateRepository;
 
   beforeEach(() => {
+    jest.useFakeTimers()
+
     clockCalcsFind = {
       find: jest.fn().mockReturnValue(null),
     };

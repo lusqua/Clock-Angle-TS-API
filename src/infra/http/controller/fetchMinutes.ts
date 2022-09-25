@@ -1,6 +1,6 @@
 import { CalcCreateRepository, CalcFindRepository } from "../../repository";
 import { Request, Response } from "express";
-import { ClockCalcsFindService } from "../../../domain/useCase/ClockCalsFindService";
+import { ClockCalcsFindService } from "@domain/useCase/ClockCalsFindService";
 
 type queryParamsType = {
   hour?: number;
@@ -24,7 +24,7 @@ export class ClockAngleMinutesFetch {
   Promise<responseType> {
     const { hour, minutes } = req.params as queryParamsType;
 
-    const service = this ? this.clockCalcsFindService : new ClockCalcsFindService();
+    const service = this ? this.clockCalcsFindService : new ClockCalcsFindService(new CalcFindRepository(), new CalcCreateRepository());
     const response = await service.handle(Number(hour), Number(minutes));
 
     res.send(response);
