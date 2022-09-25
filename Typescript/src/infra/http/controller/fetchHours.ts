@@ -23,12 +23,10 @@ export class ClockAngleHourFetch implements IClockAngleHourFetch {
 
     const service = this? this.clockCalcsFindService : new ClockCalcsFindService();
 
-    console.log(service.handle)
-
     const response = await service.handle(hour);
 
     res.send(response);
 
-    return response;
+    return response as responseType;
   }
 }
