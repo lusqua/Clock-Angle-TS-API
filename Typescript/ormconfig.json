@@ -1,0 +1,8 @@
+{
+  "type": "postgres",
+  "host": "192.168.1.105",
+  "port": 5432,
+  "username": "postgres",
+  "password": "1923724865",
+  "database": "clockAngle"
+}
