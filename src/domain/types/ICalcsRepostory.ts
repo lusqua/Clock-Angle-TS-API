@@ -1,5 +1,5 @@
 import { ClockCalcsType } from "../entity/ClockCalcs";
-import { CalcCreateRepository, CalcFindRepository } from "@infra/repository";
+import { CalcCreateRepository, CalcFindRepository } from "../../infra/repository";
 import { ClockCalcsFindService } from "../useCase/ClockCalsFindService";
 
 export interface ICalcsFindRepository {
