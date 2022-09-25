@@ -30,6 +30,22 @@ or using yarn
 yarn start
 ```
 
+
+### After running the project, just send requests
+
+Request examples
+```
+GET - http://localhost:3000/v1/rest/clock/6
+OR
+GET - http://localhost:3000/v1/rest/clock/6/0
+
+Response
+{
+  "angle": 180
+}
+
+```
+
 ## How to test
 
 Using npm
