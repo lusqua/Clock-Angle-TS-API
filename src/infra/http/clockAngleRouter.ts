@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { ClockAngleHourFetch, ClockAngleMinutesFetch } from "./controller";
-import { ClockService } from "@domain/types/ICalcsRepostory";
+import { ClockService } from "../../domain/types/ICalcsRepostory";
 
 export function clockAngleRouter(): Router {
   const router = Router();
