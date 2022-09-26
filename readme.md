@@ -19,7 +19,32 @@ or using yarn
 yarn install
 ```
 
-3. Run the project
+3. Change database configuration in `src/infra/database/dataSource.ts`
+
+```json
+  type: "postgres",
+  host: "localhost",
+  port: 5432,
+  username: "postgres",
+  password: process.env.DB_PASSWORD,
+  database: "clockAngle",
+  migrations: ["src/infra/database/migrations/*.ts"],
+  entities: ["src/domain/entity/*.ts"],
+```
+
+4. Run the migrations
+
+Usining npm
+```bash
+npm run typeorm migration:run
+```
+
+or using yarn
+```bash
+yarn typeorm migration:run
+```
+
+5. Run the project
 
 Usining npm
 ```bash
