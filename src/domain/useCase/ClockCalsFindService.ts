@@ -3,6 +3,7 @@ import { ICalcsCreateRepository, ICalcsFindRepository } from "../types/ICalcsRep
 
 type ResponseType = {
   angle: number;
+  error?: string;
 };
 
 export interface IClockCalcsFindService {
@@ -16,6 +17,12 @@ export class ClockCalcsFindService implements IClockCalcsFindService {
   ) {}
 
   async handle(hour: number, minute: number = 0): Promise<ResponseType> {
+    if(hour < 0) {
+      return {
+        angle: -1,
+        error: "Hour must be greater than 0"
+      }
+    }
 
     hour > 12 ? hour = hour - 12 : hour = hour;
 
