@@ -21,7 +21,8 @@ yarn install
 
 3. Change database configuration in `src/infra/database/dataSource.ts`
 
-```json
+```js
+{
   type: "postgres",
   host: "localhost",
   port: 5432,
@@ -30,6 +31,7 @@ yarn install
   database: "clockAngle",
   migrations: ["src/infra/database/migrations/*.ts"],
   entities: ["src/domain/entity/*.ts"],
+}
 ```
 
 4. Run the migrations
