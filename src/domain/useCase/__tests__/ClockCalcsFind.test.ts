@@ -30,6 +30,15 @@ describe('ClockCalcsFind', (): void => {
 
   });
 
+  it('should return error message', async () => {
+    const clockCalcsFindService = new ClockCalcsFindService(clockCalcsFind, clockCalcsCreate);
+
+    const response = await clockCalcsFindService.handle(-1, 0);
+
+    expect(response.angle).toBe(-1);
+    expect(response.error).toBe('Hour must be greater than 0');
+  })
+
   it('should return the angle 90 of the clock', async () => {
 
     clockCalcsFind.find = jest.fn().mockReturnValue(
